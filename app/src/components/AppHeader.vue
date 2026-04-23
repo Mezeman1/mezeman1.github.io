@@ -1,14 +1,14 @@
 <script setup lang="ts">
 import { RouterLink } from 'vue-router'
+import logo from '../../73d45e01-0b92-4458-b585-34f9624a49c1.png'
 </script>
 
 <template>
   <header class="border-b border-terminal-border bg-terminal-surface">
     <div class="container mx-auto px-4 max-w-4xl py-4">
       <div class="flex items-center justify-between flex-wrap gap-4">
-        <RouterLink to="/" class="text-terminal-green hover:no-underline">
-          <span class="text-terminal-muted">root@mezeman1:~#</span>
-          <span class="ml-2 text-lg font-bold">mees.buschman</span>
+        <RouterLink to="/" class="flex items-center gap-3 hover:no-underline">=
+          <span class="text-terminal-muted text-sm">root@mezeman1:~#</span>
         </RouterLink>
         <nav class="flex gap-6 text-sm">
           <RouterLink to="/" class="text-terminal-muted hover:text-terminal-green transition-colors">
