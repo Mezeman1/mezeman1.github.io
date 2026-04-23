@@ -18,7 +18,7 @@ const games: Game[] = [
     slug: 'idle-ant-farm',
     description: 'Build your ant empire and watch it grow. Manage resources, expand colonies, dominate.',
     tags: ['idle', 'clicker', 'strategy'],
-    url: 'https://mezeman1.github.io/idle-ant-farm',
+    url: 'https://idle-ant-farm.com',
   },
   {
     title: 'Idle Packs',
