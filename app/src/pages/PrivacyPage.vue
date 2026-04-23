@@ -1,3 +1,26 @@
+<script setup lang="ts">
+import { useRouter } from 'vue-router'
+import TerminalPrompt from '../components/TerminalPrompt.vue'
+
+const router = useRouter()
+
+type Line = { prompt: boolean; text: string }
+
+const commands: Record<string, () => Line[]> = {
+  help: () => [
+    { prompt: false, text: 'available commands:' },
+    { prompt: false, text: '  cd /       — go home' },
+    { prompt: false, text: '  cd games   — go to games' },
+    { prompt: false, text: '  clear      — clear terminal' },
+  ],
+  'cd /': () => { router.push('/'); return [] },
+  'cd ~': () => { router.push('/'); return [] },
+  'cd home': () => { router.push('/'); return [] },
+  'cd games': () => { router.push('/games'); return [] },
+  'cd games/': () => { router.push('/games'); return [] },
+}
+</script>
+
 <template>
   <div>
     <div class="mb-6 flex items-center gap-2 text-sm">
@@ -63,9 +86,6 @@
       </div>
     </div>
 
-    <div class="mt-4 flex gap-2 text-sm">
-      <span class="text-terminal-dimgreen">$</span>
-      <span class="cursor text-terminal-muted"></span>
-    </div>
+    <TerminalPrompt :commands="commands" />
   </div>
 </template>

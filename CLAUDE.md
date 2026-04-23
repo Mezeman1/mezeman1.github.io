@@ -18,17 +18,30 @@ nvm use 22 && npm run dev
 nvm use 22 && npm run build
 ```
 
+## Structure
+
+All app code lives in `./app/`. Always edit files under `app/src/`, not `src/`.
+
+```
+app/
+  src/
+    pages/   ← Vue page components
+    ...
+  tailwind.config.js
+  vite.config.ts
+```
+
 ## Pages
 
 | Route | Component | Purpose |
 |-------|-----------|---------|
-| `/` | `src/pages/HomePage.vue` | Animated terminal intro |
-| `/games` | `src/pages/GamesPage.vue` | Game listing |
-| `/privacy` | `src/pages/PrivacyPage.vue` | Privacy policy |
+| `/` | `app/src/pages/HomePage.vue` | Interactive terminal |
+| `/games` | `app/src/pages/GamesPage.vue` | Game listing |
+| `/privacy` | `app/src/pages/PrivacyPage.vue` | Privacy policy |
 
 ## Theme
 
-Console / terminal aesthetic. Colors defined in `tailwind.config.js` under `terminal.*`:
+Console / terminal aesthetic. Colors defined in `app/tailwind.config.js` under `terminal.*`:
 
 - `terminal-bg` — `#0a0a0a`
 - `terminal-green` — `#00ff41`

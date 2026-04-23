@@ -1,4 +1,9 @@
 <script setup lang="ts">
+import { useRouter } from 'vue-router'
+import TerminalPrompt from '../components/TerminalPrompt.vue'
+
+const router = useRouter()
+
 interface Game {
   title: string
   slug: string
@@ -30,6 +35,40 @@ const games: Game[] = [
     url: 'https://mezeman1.github.io/idle-complaints',
   },
 ]
+
+const gameMap = Object.fromEntries(games.map(g => [g.slug, g]))
+
+type Line = { prompt: boolean; text: string }
+
+const commands: Record<string, () => Line[]> = {
+  help: () => [
+    { prompt: false, text: 'available commands:' },
+    { prompt: false, text: '  ls                — list games' },
+    { prompt: false, text: '  cat <slug>         — game details' },
+    { prompt: false, text: '  ./play <slug>      — open game' },
+    { prompt: false, text: '  cd /               — go home' },
+    { prompt: false, text: '  clear              — clear terminal' },
+  ],
+  ls: () => games.map(g => ({ prompt: false, text: `${g.slug}/` })),
+  'ls games/': () => games.map(g => ({ prompt: false, text: `${g.slug}/` })),
+  'cd /': () => { router.push('/'); return [] },
+  'cd ~': () => { router.push('/'); return [] },
+  'cd home': () => { router.push('/'); return [] },
+  ...Object.fromEntries(
+    games.flatMap(g => [
+      [`cat ${g.slug}`, () => [
+        { prompt: false, text: `// ${g.slug}` },
+        { prompt: false, text: g.description },
+        { prompt: false, text: `tags: ${g.tags.map(t => '#' + t).join('  ')}` },
+        { prompt: false, text: `url:  ${g.url}` },
+      ]],
+      [`./play ${g.slug}`, () => {
+        window.open(g.url, '_blank', 'noopener')
+        return [{ prompt: false, text: `launching ${g.title}...` }]
+      }],
+    ])
+  ),
+}
 </script>
 
 <template>
@@ -71,9 +110,6 @@ const games: Game[] = [
       </div>
     </div>
 
-    <div class="mt-6 flex gap-2 text-sm">
-      <span class="text-terminal-dimgreen">$</span>
-      <span class="cursor text-terminal-muted"></span>
-    </div>
+    <TerminalPrompt :commands="commands" />
   </div>
 </template>
