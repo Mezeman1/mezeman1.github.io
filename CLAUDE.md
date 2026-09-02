@@ -31,6 +31,15 @@ app/
   vite.config.ts
 ```
 
+## robots.txt
+
+`robots.txt` lives at the repo root, not in a `public/` dir. Vite's publicDir
+would sit inside `outDir` (`../`), so vite refuses to copy it; `emptyOutDir` is
+false, so a hand-written root file survives every build. This is the only
+robots.txt Google reads for `mezeman1.github.io`, so per-project files under
+`/<project>/robots.txt` are inert and the `Sitemap:` lines for every project
+site belong here.
+
 ## Pages
 
 | Route | Component | Purpose |

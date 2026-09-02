@@ -34,6 +34,13 @@ const games: Game[] = [
     tags: ['idle', 'quirky'],
     url: 'https://mezeman1.github.io/idle-complaints',
   },
+  {
+    title: 'Idle Grid Factory',
+    slug: 'idle-factory-grid',
+    description: 'Mine ore, lay belts, tunnel under your own bus and smelt plates. A grid factory that keeps producing while you are away.',
+    tags: ['idle', 'factory', 'automation'],
+    url: 'https://mezeman1.github.io/idle-factory-grid/',
+  },
 ]
 
 const gameMap = Object.fromEntries(games.map(g => [g.slug, g]))

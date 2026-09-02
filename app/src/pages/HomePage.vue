@@ -15,7 +15,7 @@ const intro: Line[] = [
   { prompt: true, text: 'ls skills/' },
   { prompt: false, text: 'vue.js  typescript  game-design  firebase  tailwindcss  vite' },
   { prompt: true, text: 'ls games/ --brief' },
-  { prompt: false, text: 'idle-ant-farm/  idle-packs/  idle-complaints/' },
+  { prompt: false, text: 'idle-ant-farm/  idle-packs/  idle-complaints/  idle-factory-grid/' },
 ]
 
 const COMMANDS: Record<string, () => Line[]> = {
@@ -35,10 +35,10 @@ const COMMANDS: Record<string, () => Line[]> = {
   ],
   'ls skills/': () => [{ prompt: false, text: 'vue.js  typescript  game-design  firebase  tailwindcss  vite' }],
   'ls games/': () => [
-    { prompt: false, text: 'idle-ant-farm/  idle-packs/  idle-complaints/' },
+    { prompt: false, text: 'idle-ant-farm/  idle-packs/  idle-complaints/  idle-factory-grid/' },
   ],
   'ls games/ --brief': () => [
-    { prompt: false, text: 'idle-ant-farm/  idle-packs/  idle-complaints/' },
+    { prompt: false, text: 'idle-ant-farm/  idle-packs/  idle-complaints/  idle-factory-grid/' },
   ],
   'cd games': () => [],
   'cd games/': () => [],
@@ -192,7 +192,7 @@ function onKeydown(e: KeyboardEvent) {
       >
         <div class="text-xs text-terminal-muted mb-1">directory</div>
         <div class="text-terminal-green group-hover:text-white transition-colors">~/games <span class="text-terminal-muted">→</span></div>
-        <div class="text-xs text-terminal-muted mt-1">3 idle games available</div>
+        <div class="text-xs text-terminal-muted mt-1">4 idle games available</div>
       </RouterLink>
       <a
         href="mailto:mezeman1@gmail.com"
