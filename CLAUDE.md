@@ -1,6 +1,6 @@
 # mezeman1.github.io
 
-Portfolio site for Mees Buschman — indie game developer.
+Portfolio site for mezeman1 — indie game developer.
 
 ## Stack
 

@@ -8,7 +8,7 @@ type Line = { prompt: boolean; text: string }
 
 const intro: Line[] = [
   { prompt: true, text: 'whoami' },
-  { prompt: false, text: 'Mees Buschman — indie game developer' },
+  { prompt: false, text: 'mezeman1 — indie game developer' },
   { prompt: true, text: 'cat bio.txt' },
   { prompt: false, text: 'I build idle & casual games that are easy to pick up and hard to put down.' },
   { prompt: false, text: 'Based in the Netherlands. Always shipping something new.' },
@@ -28,7 +28,7 @@ const COMMANDS: Record<string, () => Line[]> = {
     { prompt: false, text: '  cd games         — go to games page' },
     { prompt: false, text: '  clear            — clear terminal' },
   ],
-  whoami: () => [{ prompt: false, text: 'Mees Buschman — indie game developer' }],
+  whoami: () => [{ prompt: false, text: 'mezeman1 — indie game developer' }],
   'cat bio.txt': () => [
     { prompt: false, text: 'I build idle & casual games that are easy to pick up and hard to put down.' },
     { prompt: false, text: 'Based in the Netherlands. Always shipping something new.' },

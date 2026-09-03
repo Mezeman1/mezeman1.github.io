@@ -30,7 +30,7 @@ const commands: Record<string, () => Line[]> = {
 
     <div class="border border-terminal-border bg-terminal-surface p-6 space-y-5 text-sm leading-relaxed">
       <div class="text-terminal-muted text-xs border-b border-terminal-border pb-3">
-        last-updated: 2024-09-22 // author: Mees Buschman
+        last-updated: 2024-09-22 // author: mezeman1
       </div>
 
       <p class="text-terminal-muted">
