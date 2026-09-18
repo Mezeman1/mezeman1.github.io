@@ -30,7 +30,7 @@ const commands: Record<string, () => Line[]> = {
 
     <div class="border border-terminal-border bg-terminal-surface p-6 space-y-5 text-sm leading-relaxed">
       <div class="text-terminal-muted text-xs border-b border-terminal-border pb-3">
-        last-updated: 2026-09-11 // author: mezeman1
+        last-updated: 2026-09-18 // author: mezeman1
       </div>
 
       <p class="text-terminal-muted">
@@ -64,9 +64,17 @@ const commands: Record<string, () => Line[]> = {
             used to see which parts of the game people play and where the game breaks.
           </li>
           <li>
+            <span class="text-terminal-dimgreen">purchases:</span>
+            The game offers one optional in-app purchase through Google Play Billing. Google takes
+            the payment and holds the record of it against your Google account. We never see your
+            card, your billing address, your name or your email. The game asks Google Play whether
+            your account owns the product and keeps only that yes or no, on your device, so the
+            purchase still works with no network. Nothing in the game is locked behind it.
+          </li>
+          <li>
             <span class="text-terminal-dimgreen">not_collected:</span>
-            No ads, no purchases, no accounts created by us, no location, no contacts, no camera,
-            no microphone, no files, no messages.
+            No ads, no accounts created by us, no payment details, no location, no contacts, no
+            camera, no microphone, no files, no messages.
           </li>
         </ul>
       </section>
@@ -75,8 +83,8 @@ const commands: Record<string, () => Line[]> = {
         <h2 class="text-terminal-green mb-2">// endless bastion — web build</h2>
         <p class="text-terminal-muted">
           The browser version stores your save in your browser's own local storage on your machine,
-          and includes no analytics and no sign-in. It is served by GitHub Pages, which logs requests
-          — including your IP address — under
+          and includes no analytics, no sign-in and nothing to buy. It is served by GitHub
+          Pages, which logs requests — including your IP address — under
           <a
             href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement"
             class="text-terminal-green hover:underline"
@@ -100,8 +108,8 @@ const commands: Record<string, () => Line[]> = {
         <h2 class="text-terminal-green mb-2">// who else sees it</h2>
         <p class="text-terminal-muted">
           We do not sell your data and we do not share it with advertisers. The services above are
-          run by Google (Firebase, Google Play, Play Games Services) and process this data on our
-          behalf under
+          run by Google (Firebase, Google Play, Play Games Services, Google Play Billing) and
+          process this data on our behalf under
           <a
             href="https://policies.google.com/privacy"
             class="text-terminal-green hover:underline"
@@ -133,6 +141,18 @@ const commands: Record<string, () => Line[]> = {
             <span class="text-terminal-dimgreen">analytics:</span>
             Held by Google under Firebase's retention settings. Resetting or deleting your
             advertising ID in Android settings breaks the link to your device.
+          </li>
+          <li>
+            <span class="text-terminal-dimgreen">purchases:</span>
+            The record of a purchase belongs to your Google account, not to us, and we cannot
+            delete it. Refunds and purchase history live at
+            <a
+              href="https://play.google.com/store/account/orderhistory"
+              class="text-terminal-green hover:underline"
+              target="_blank"
+              rel="noopener"
+            >your Google Play order history</a>. A refunded purchase is withdrawn from the game
+            the next time it reaches the store.
           </li>
           <li>
             <span class="text-terminal-dimgreen">account_data:</span>
