@@ -30,7 +30,7 @@ const commands: Record<string, () => Line[]> = {
 
     <div class="border border-terminal-border bg-terminal-surface p-6 space-y-5 text-sm leading-relaxed">
       <div class="text-terminal-muted text-xs border-b border-terminal-border pb-3">
-        last-updated: 2026-09-18 // author: mezeman1
+        last-updated: 2026-09-23 // author: mezeman1
       </div>
 
       <p class="text-terminal-muted">
@@ -65,15 +65,28 @@ const commands: Record<string, () => Line[]> = {
           </li>
           <li>
             <span class="text-terminal-dimgreen">purchases:</span>
-            The game offers one optional in-app purchase through Google Play Billing. Google takes
+            The game offers optional one-time in-app purchases through Google Play Billing: a
+            shard doubler, and a skip that pays out ad rewards without showing the ad. Google takes
             the payment and holds the record of it against your Google account. We never see your
             card, your billing address, your name or your email. The game asks Google Play whether
-            your account owns the product and keeps only that yes or no, on your device, so the
-            purchase still works with no network. Nothing in the game is locked behind it.
+            your account owns each product and keeps only that yes or no, on your device, so a
+            purchase still works with no network. Nothing in the game is locked behind them.
+          </li>
+          <li>
+            <span class="text-terminal-dimgreen">ads:</span>
+            The game shows rewarded video ads through Google AdMob, and only when you press a button
+            that offers a reward for watching one. There are no banners and no ads that interrupt
+            play. To serve an ad, AdMob receives the Android advertising ID, your IP address (and the
+            coarse location it implies), device model, operating system, app version, and how you
+            interact with the ad. Google uses this to serve and measure ads, to prevent fraud and,
+            where you allow it, to personalise them. In the EEA, the UK and Switzerland the game asks
+            for your consent through Google's consent form before any ad is requested, and you can
+            change that choice later from the game's Settings. If you own the ad skip, the game makes
+            no ad requests and never shows the consent form.
           </li>
           <li>
             <span class="text-terminal-dimgreen">not_collected:</span>
-            No ads, no accounts created by us, no payment details, no location, no contacts, no
+            No accounts created by us, no payment details, no precise location, no contacts, no
             camera, no microphone, no files, no messages.
           </li>
         </ul>
@@ -107,15 +120,23 @@ const commands: Record<string, () => Line[]> = {
       <section>
         <h2 class="text-terminal-green mb-2">// who else sees it</h2>
         <p class="text-terminal-muted">
-          We do not sell your data and we do not share it with advertisers. The services above are
-          run by Google (Firebase, Google Play, Play Games Services, Google Play Billing) and
-          process this data on our behalf under
+          We do not sell your data. The services above are run by Google (Firebase, Google Play,
+          Play Games Services, Google Play Billing, Google AdMob) and process this data under
           <a
             href="https://policies.google.com/privacy"
             class="text-terminal-green hover:underline"
             target="_blank"
             rel="noopener"
-          >Google's privacy policy</a>. We disclose data otherwise only where the law requires it.
+          >Google's privacy policy</a>. The Android build shares ad data only with AdMob, which
+          may pass it to the advertisers bidding to show you an ad; how Google handles it is set
+          out in
+          <a
+            href="https://policies.google.com/technologies/partner-sites"
+            class="text-terminal-green hover:underline"
+            target="_blank"
+            rel="noopener"
+          >how Google uses information from apps that use its services</a>. We disclose data
+          otherwise only where the law requires it.
         </p>
       </section>
 
@@ -143,6 +164,13 @@ const commands: Record<string, () => Line[]> = {
             advertising ID in Android settings breaks the link to your device.
           </li>
           <li>
+            <span class="text-terminal-dimgreen">ads:</span>
+            Held by Google under its own retention rules. Change your consent choice from the game's
+            Settings, opt out of ad personalisation or delete your advertising ID under
+            <em>Android Settings → Privacy → Ads</em>, or stop ad requests entirely by not
+            pressing an ad offer.
+          </li>
+          <li>
             <span class="text-terminal-dimgreen">purchases:</span>
             The record of a purchase belongs to your Google account, not to us, and we cannot
             delete it. Refunds and purchase history live at
@@ -168,7 +196,10 @@ const commands: Record<string, () => Line[]> = {
           Under the GDPR and similar laws you can ask for a copy of the data held about you, ask for
           it to be corrected or deleted, or object to its processing. Analytics is processed on the
           basis of our legitimate interest in seeing how the game performs; account data is processed
-          to provide the service you signed in for. One email is enough for any of these.
+          to provide the service you signed in for. Personalised ads in the EEA, the UK and
+          Switzerland rely on your consent, which you can withdraw at any time from the game's
+          Settings; ads shown without that consent are limited to what Google's non-personalised
+          ads require. One email is enough for any of these.
         </p>
       </section>
 
