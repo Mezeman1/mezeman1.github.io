@@ -1,28 +1,15 @@
-<script setup lang="ts">
-import { useRouter } from 'vue-router'
-import TerminalPrompt from '../components/TerminalPrompt.vue'
-
-const router = useRouter()
-
-type Line = { prompt: boolean; text: string }
-
-const commands: Record<string, () => Line[]> = {
-  help: () => [
-    { prompt: false, text: 'available commands:' },
-    { prompt: false, text: '  cd /       — go home' },
-    { prompt: false, text: '  cd games   — go to games' },
-    { prompt: false, text: '  clear      — clear terminal' },
-  ],
-  'cd /': () => { router.push('/'); return [] },
-  'cd ~': () => { router.push('/'); return [] },
-  'cd home': () => { router.push('/'); return [] },
-  'cd games': () => { router.push('/games'); return [] },
-  'cd games/': () => { router.push('/games'); return [] },
-}
-</script>
-
-<template>
-  <div>
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Privacy policy — Mezeman</title>
+<style>
+body{margin:0;background:#0a0a0a;color:#c2d4c2;font:16px/1.65 system-ui,sans-serif}
+main{max-width:850px;margin:auto;padding:32px 22px}
+h1,h2,a{color:#68f08b}h2{font-size:1.15rem;margin-top:1.8rem}
+li{margin:.7rem 0}ul{padding-left:1.3rem}a{overflow-wrap:anywhere}
+.text-terminal-dimgreen{color:#a0e5af}.text-xs{font-size:.85rem}
+.border-b{border-bottom:1px solid #28432e}.pb-3{padding-bottom:1rem}
+</style></head><body><main><h1>Privacy policy</h1><div>
     <div class="mb-6 flex items-center gap-2 text-sm">
       <span class="text-terminal-dimgreen">$</span>
       <span class="text-terminal-white">Privacy policy · cat privacy-policy.txt</span>
@@ -36,7 +23,7 @@ const commands: Record<string, () => Line[]> = {
       <p class="text-terminal-muted">
         This policy covers every game published by mezeman1: <span class="text-terminal-dimgreen">Endless
         Bastion</span> on Google Play and on the web, and the browser games listed under
-        <RouterLink to="/games" class="text-terminal-green hover:underline">~/games</RouterLink>.
+        <a href="/#/games" class="text-terminal-green hover:underline">~/games</a>.
         Each game collects different things, so every section below says which game it applies to.
       </p>
 
@@ -276,8 +263,4 @@ const commands: Record<string, () => Line[]> = {
       <div class="text-xs text-terminal-muted border-t border-terminal-border pt-3">
         EOF
       </div>
-    </div>
-
-    <TerminalPrompt :commands="commands" />
-  </div>
-</template>
+    </div></div></main></body></html>
